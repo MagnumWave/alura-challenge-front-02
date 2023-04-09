@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'edicao-02';
+  variavel = 'edicao-02';
+  faCoffee = "faCoffee"
 }

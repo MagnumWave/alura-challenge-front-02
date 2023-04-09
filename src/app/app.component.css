@@ -1,0 +1,30 @@
+.header {
+  border: 1px solid black;
+  font-size: var(--variavel-teste);
+  /* background-color: var(--main-bg-color); */
+}
+
+.body-container {
+  border: 1px solid blue;
+}
+
+.menu {
+  border: 1px solid green;
+}
+
+.outlet-container {
+  border: 1px solid red;
+}
+
+.page-width-responsive {
+  border: 1px solid purple;
+  color: var(--main-font-color)
+}
+
+.black-border {
+  border: 1px solid black;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
