@@ -1,0 +1,11 @@
+.list-container {
+  border: 1px solid black;
+}
+
+.icon-container {
+  border: 1px solid red;
+}
+
+.option-description {
+  border: 1px solid green;
+}

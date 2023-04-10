@@ -1,0 +1,8 @@
+.photo-wrapper {
+  width: 40px;
+  resize: both;
+}
+
+.profile-frame:hover {
+  background: rgba(255, 255, 255, 0.08);
+}

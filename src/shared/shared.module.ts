@@ -7,6 +7,7 @@ import { MenuListComponent } from './components/menu-list/menu-list.component';
 import { HighlightViewerComponent } from './components/highlight-viewer/highlight-viewer.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 
 
@@ -15,7 +16,8 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
     MenuListComponent,
     HighlightViewerComponent,
     UserProfileComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    SearchBarComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
     MenuListComponent,
     HighlightViewerComponent,
     UserProfileComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    SearchBarComponent
   ]
 })
 export class SharedModule { }

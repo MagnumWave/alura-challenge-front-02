@@ -1,6 +1,6 @@
 .header {
   border: 1px solid black;
-  font-size: var(--variavel-teste);
+  /* font-size: var(--variavel-teste); */
   /* background-color: var(--main-bg-color); */
 }
 
@@ -27,4 +27,27 @@
 
 .dropdown-toggle::after {
   display: none;
+}
+
+.search-bar-toggle {
+  transition: all 0.3s;
+}
+
+.search-bar-wrapper {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.search-bar-wrapper-opens {
+  display: none;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+.offcanvas {
+  background-color: var(--main-bg-color);
+  height: 40px;
 }
