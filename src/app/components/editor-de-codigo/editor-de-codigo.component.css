@@ -1,0 +1,71 @@
+.w-h-100 {
+  width: 100%;
+  height: 100%;
+}
+
+/* .hightligh-code-area-container {
+  width: 100%;
+  height: 80%;
+} */
+
+.section-title {
+  font-family: var(--inter-font-family-mobile);
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--first-font-size-mobile);
+  line-height: 18px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
+.form-item-container>input[type=text] {
+  background-color: var(--input-bg-color);
+  font-size: var(--second-font-size-mobile);
+
+  font-family: var(--inter-font-family-mobile);
+  font-style: normal;
+  line-height: 24px;
+
+}
+
+.form-item-container>input[type=text]::placeholder {
+  color: var(--input-placeholder-color);
+}
+
+.form-item-container>textarea {
+  background-color: var(--input-bg-color);
+  font-size: var(--second-font-size-mobile);
+  font-style: normal;
+  line-height: 24px;
+}
+
+.form-item-container>textarea::placeholder {
+  color: var(--input-placeholder-color);
+}
+
+.form-item-container>select {
+  background-color: var(--input-bg-color);
+  color: var(--input-placeholder-color);
+  font-size: var(--second-font-size-mobile);
+  font-style: normal;
+  line-height: 24px;
+}
+
+.form-item-container>input[type=color] {
+
+}
+
+.color-picker-container {
+  height: 50px;
+}
+
+.fake-color-picker {
+  display: block;
+  width: 100%;
+  height: 50px;
+
+}
+
+.form-item-padding {
+  padding: 10px 5px 10px 5px;
+}

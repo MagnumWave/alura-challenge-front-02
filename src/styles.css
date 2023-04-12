@@ -3,12 +3,18 @@
 :root {
   --main-bg-color: #051D3B;
   --main-font-color: #fff;
-  --main-font-size-mobile: 16px;
+
+  --first-font-size-mobile: 12px;
+  --second-font-size-mobile: 16px;
+  --inter-font-family-mobile: 'Inter', sans-serif;
+
+  --input-bg-color: rgba(255, 255, 255, 0.16);
+  --input-placeholder-color: rgb(255, 255, 255, 0.64);
 }
 
 body {
   background-color: var(--main-bg-color) !important;
-  font-size: var(--main-font-size-mobile) !important;
+  font-size: var(--first-font-size-mobile);
 }
 
 .black-border {

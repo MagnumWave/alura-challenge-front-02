@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-highlight-viewer',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./highlight-viewer.component.css']
 })
 export class HighlightViewerComponent implements OnInit {
+
+  @Input('color') color = '#000';
 
   constructor() { }
 
