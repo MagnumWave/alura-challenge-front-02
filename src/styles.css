@@ -10,3 +10,27 @@ body {
   background-color: var(--main-bg-color) !important;
   font-size: var(--main-font-size-mobile) !important;
 }
+
+.black-border {
+  border: 1px solid black;
+}
+
+.red-border {
+  border: 1px solid red;
+}
+
+.green-border {
+  border: 1px solid green;
+}
+
+.blue-border {
+  border: 1px solid blue;
+}
+
+.yellow-border {
+  border: 1px solid yellow;
+}
+
+.fuchsia-border {
+  border: 1px solid fuchsia;
+}

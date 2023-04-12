@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EditorDeCodigoComponent } from './components/editor-de-codigo/editor-de-codigo.component';
 import { ComunidadeComponent } from './components/comunidade/comunidade.component';
-import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado/nao-encontrado.component';
+import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontrado.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/editor', pathMatch: 'full' },
