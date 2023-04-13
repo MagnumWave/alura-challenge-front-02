@@ -51,3 +51,14 @@
   background-color: var(--main-bg-color);
   height: 40px;
 }
+
+@media screen and (max-width: 320px) {
+  .dropdown-menu {
+    width: 220px;
+  }
+}
+
+.dropdown-menu {
+  background-color: var(--menu-mobile-tablet-background);
+  margin-right: 10px !important;
+}

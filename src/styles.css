@@ -10,6 +10,12 @@
 
   --input-bg-color: rgba(255, 255, 255, 0.16);
   --input-placeholder-color: rgb(255, 255, 255, 0.64);
+
+  --menu-icon-background: #5081FB;
+  --menu-icon-color: #FFFFFF;
+
+  --menu-mobile-tablet-background: #2D415B;
+
 }
 
 body {
