@@ -5,24 +5,21 @@
 }
 
 .body-container {
-  border: 1px solid blue;
 }
 
 .menu {
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 .outlet-container {
-  border: 1px solid red;
 }
 
 .page-width-responsive {
-  border: 1px solid purple;
   color: var(--main-font-color)
 }
 
 .black-border {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .dropdown-toggle::after {
@@ -55,6 +52,10 @@
 @media screen and (max-width: 320px) {
   .dropdown-menu {
     width: 220px;
+  }
+
+  .logo-wrapper {
+    margin-left: 10px
   }
 }
 

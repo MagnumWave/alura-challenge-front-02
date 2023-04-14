@@ -8,7 +8,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class EditorDeCodigoComponent implements OnInit {
 
   @ViewChild('realColorPicker') realColorPicker: HTMLInputElement | undefined;
-  pickedColor = "#000000"
+  pickedColor = "#6BD1FF"
 
   constructor() { }
 

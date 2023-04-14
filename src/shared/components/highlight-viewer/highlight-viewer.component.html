@@ -1,4 +1,13 @@
 <div class="inner-container rounded-3"
     [style]="{'background-color': color}">
-  <textarea class="rounded yellow-border code-textarea" name="" id="" rows="10"></textarea>
+    <div>
+      <div class="three-dot-header d-flex flex-row justify-content-center align-items-center">
+        <span></span>
+        <span class="middle-ball-header"></span>
+        <span></span>
+      </div>
+      <textarea class="rounded border-0 code-textarea bg-black text-white" name="" id="" rows="10">
+        {{ mockedText }}
+      </textarea>
+    </div>
 </div>

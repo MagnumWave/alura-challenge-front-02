@@ -7,6 +7,7 @@
   --first-font-size-mobile: 12px;
   --second-font-size-mobile: 16px;
   --inter-font-family-mobile: 'Inter', sans-serif;
+  --roboto-font-family-mobile: 'Roboto Mono', sans-serif;
 
   --input-bg-color: rgba(255, 255, 255, 0.16);
   --input-placeholder-color: rgb(255, 255, 255, 0.64);
@@ -15,6 +16,18 @@
   --menu-icon-color: #FFFFFF;
 
   --menu-mobile-tablet-background: #2D415B;
+
+  --red-of-three-dots-color: #FF5F56;
+  --yellow-of-three-dots-color: #FFBD2E;
+  --green-of-three-dots-color: #27C93F;
+
+  --primary-button-bg-color: #5081FB;
+  --primary-button-text-color: #051D3B;
+
+  --secondary-button-bg-color: rgba(80, 129, 251, 0.08);
+  --secondary-button-text-color: #fff;
+
+
 
 }
 
