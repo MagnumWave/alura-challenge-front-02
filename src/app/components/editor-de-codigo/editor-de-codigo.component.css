@@ -3,11 +3,6 @@
   height: 100%;
 }
 
-/* .hightligh-code-area-container {
-  width: 100%;
-  height: 80%;
-} */
-
 .highlight-col {
   padding-left: 20px;
   padding-right: 20px;
@@ -65,10 +60,6 @@
   line-height: 24px;
 }
 
-.form-item-container>input[type=color] {
-
-}
-
 .color-picker-container {
   height: 50px;
 }
@@ -84,33 +75,6 @@
 .form-item-padding {
   padding: 10px 5px 10px 5px;
 }
-
-/* .three-dot-header {
-  position: relative;
-  top: 20px;
-  right: 40%;
-  margin-left: 30px;
-  margin-bottom: 2px;
-} */
-
-/* .three-dot-header>span {
-  width: 10px;
-  height: 10px;
-  margin: 3px;
-  border-radius: 5px;
-}
-
-.three-dot-header>span:nth-child(1) {
-  background-color: var(--red-of-three-dots-color);
-}
-
-.three-dot-header>span:nth-child(2) {
-  background-color: var(--yellow-of-three-dots-color);
-}
-
-.three-dot-header>span:nth-child(3) {
-  background-color: var(--green-of-three-dots-color);
-} */
 
 .save-button-container>button {
   background-color: var(--primary-button-bg-color);

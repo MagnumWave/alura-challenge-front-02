@@ -1,0 +1,12 @@
+.form-item-container {
+  font-family: var(--inter-font-family-mobile);
+  font-size: var(--second-font-size-mobile);
+}
+
+.form-item-container>input[type=search] {
+  background-color: var(--input-bg-color);
+
+  font-family: var(--inter-font-family-mobile);
+  font-style: normal;
+  line-height: 24px;
+}

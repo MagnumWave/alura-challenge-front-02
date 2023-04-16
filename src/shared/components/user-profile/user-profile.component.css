@@ -1,3 +1,11 @@
+
+
+@media (min-width: 1024px) {
+  .profile-wrapper {
+    margin-left: -30px;
+  }
+}
+
 .photo-wrapper {
   width: 40px;
   resize: both;
@@ -5,4 +13,12 @@
 
 .profile-frame:hover {
   background: rgba(255, 255, 255, 0.08);
+}
+
+.user-name {
+  font-family: var(--inter-font-family-mobile);
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--second-font-size-mobile);
+  line-height: 24px;
 }

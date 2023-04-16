@@ -15,22 +15,12 @@ export class EditorDeCodigoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  abreColorPicker(arg: HTMLInputElement){
-    // console.log(arg.value);
-
-      arg.click();
-      // this.isColorPickerOpened = true;
-
-
-
-    // this.realColorPicker.nativeElement;
+  abreColorPicker(input: HTMLInputElement){
+      input.click();
   }
 
-  handleChangeColorPicker(arg: HTMLInputElement){
-    console.log(arg.value);
-    this.pickedColor = arg.value;
-
-
+  handleChangeColorPicker(input: HTMLInputElement){
+    this.pickedColor = input.value;
   }
 
 }

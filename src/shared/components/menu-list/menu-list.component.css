@@ -9,12 +9,20 @@
   }
 }
 
-.list-container {
-
-}
-
 .list-container>ul {
   list-style: none;
+}
+
+.hori-rule {
+  width: 170px;
+  height: 1px;
+  opacity: 0.2;
+}
+
+@media (min-width: 321px) and (max-width: 768px)  {
+  .hori-rule {
+    width: 200px;
+  }
 }
 
 .option-description {
@@ -24,12 +32,9 @@
   line-height: 24px;
 }
 
-
-
 .icon-container {
   background-color: var(--menu-icon-background);
   color: var(--menu-icon-color);
-  /* padding: 15px; */
   border-radius: 15px;
   display: inline-flex;
   flex-direction: row;

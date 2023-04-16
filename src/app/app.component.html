@@ -1,29 +1,25 @@
 <div class="page-width-responsive container-fluid px-0">
   <div class="header w-100 d-flex flex-row justify-content-between align-items-center py-2">
-      <div class="logo-wrapper">
+      <div class="logo-wrapper col-lg-3">
         <img class="img-fluid" src="assets\images\alura-logo-mobile.svg" alt="">
       </div>
-      <div class="d-none d-md-block">
+      <div class="search-bar-md-wrapper d-none d-md-block col-lg-6">
         <app-search-bar></app-search-bar>
       </div>
-      <div class="d-md-none">
-        <!-- aqui toggla a searchbar -->
+      <div class="search-bar-toggler-wrapper d-md-none container d-flex flex-row justify-content-end">
         <i class="fas fa-search" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"></i>
-        <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button> -->
       </div>
       <div class="d-lg-none">
-        <!-- dropdown button entra aqui -->
-        <div class="dropdown">
-          <button class="btn text-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            <!-- icone pro dropdown -->
+        <div class="dropdown me-2">
+          <button class="btn text-white dropdown-toggle" type="button" id="dropdownMenuMobile" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa fa-navicon"></i>
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuMobile">
             <app-menu-list [isPortraitDevice]="true"></app-menu-list>
           </div>
         </div>
       </div>
-      <div class="d-none d-lg-block">
+      <div class="d-none d-lg-block me-lg-4">
         <app-user-profile></app-user-profile>
       </div>
   </div>
