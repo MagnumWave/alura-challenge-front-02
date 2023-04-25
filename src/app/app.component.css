@@ -69,4 +69,14 @@
 
 }
 
+.menu-desk-header {
+  font-family: var(--inter-font-family-mobile);
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--first-font-size-mobile);
+  line-height: 18px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
 

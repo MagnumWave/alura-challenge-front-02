@@ -1,7 +1,7 @@
 <div class="page-width-responsive container-fluid px-0">
   <div class="header w-100 d-flex flex-row justify-content-between align-items-center py-2">
       <div class="logo-wrapper col-lg-3">
-        <img class="img-fluid" src="assets\images\alura-logo-mobile.svg" alt="">
+        <img class="img-fluid ms-md-4" src="assets\images\alura-logo-mobile.svg" alt="" (click)="logaPraMim()">
       </div>
       <div class="search-bar-md-wrapper d-none d-md-block col-lg-6">
         <app-search-bar></app-search-bar>
@@ -38,7 +38,8 @@
   </div>
 
   <div class="body-container container-fluid d-flex w-100 px-0">
-    <div class="menu d-none d-lg-flex flex-md-row col-md-3">
+    <div class="menu d-none d-lg-flex flex-md-column col-md-3">
+      <div class="menu-desk-header ms-md-4">MENU</div>
       <app-menu-list></app-menu-list>
     </div>
     <div class="outlet-container col-12 col-lg-9">

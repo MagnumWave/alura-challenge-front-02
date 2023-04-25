@@ -6,8 +6,15 @@
         <span class="middle-ball-header"></span>
         <span></span>
       </div>
-      <textarea class="rounded border-0 code-textarea bg-black text-white" name="" id="" rows="10">
-        {{ mockedText }}
-      </textarea>
+      <div>
+        <pre>
+          <code #myElement class="rounded hljs javascript" name="" id="" rows="10" contenteditable="true">
+            {{ pressionado ? mockedText : "" }}
+          </code>
+        </pre>
+      </div>
+      <div>
+        <button (click)="triggerTest(myElement)">me clicka</button>
+      </div>
     </div>
 </div>

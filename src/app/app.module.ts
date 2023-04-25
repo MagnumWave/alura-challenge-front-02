@@ -1,3 +1,4 @@
+import { ProjetosService } from './services/projetos.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -20,7 +21,7 @@ import { SharedModule } from '../shared/shared.module';
     AppRoutingModule,
     SharedModule
   ],
-  providers: [],
+  providers: [ProjetosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

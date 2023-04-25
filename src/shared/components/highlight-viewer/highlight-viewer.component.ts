@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import hljs from 'highlight.js';
+import javascript from 'highlight.js/lib/languages/javascript';
 
 @Component({
   selector: 'app-highlight-viewer',
@@ -20,10 +22,31 @@ export class HighlightViewerComponent implements OnInit {
     }
     return go(f, seed, [])
   }`
+  pressionado = false;
 
-  constructor() { }
+  constructor() {
+    hljs.registerLanguage('javascript', javascript);
+  }
 
   ngOnInit(): void {
+  }
+
+  triggerTest(arg: HTMLElement){
+    this.pressionado = true;
+    // document.addEventListener('DOMContentLoaded', (event) => {
+    //   document.querySelectorAll('code').forEach((el:any) => {
+    //     hljs.highlightElement(el);
+    //   });
+    // });
+    hljs.highlightElement(arg)
+  }
+
+  mostraMock(){
+    if (this.pressionado){
+      return this.mockedText
+    } else {
+      return ""
+    }
   }
 
 }
