@@ -1,20 +1,25 @@
 <div class="inner-container rounded-3"
     [style]="{'background-color': color}">
     <div>
-      <div class="three-dot-header d-flex flex-row justify-content-center align-items-center">
-        <span></span>
-        <span class="middle-ball-header"></span>
-        <span></span>
+
+
+      <div class="code-wrapper hljs mw-min-height dracula">
+        <div class="mac-buttons-container d-flex flex-row justify-content-start align-items-center my-2 ms-1">
+          <img src="assets\images\mac_buttons.svg" alt="botões estilo Mac">
+        </div>
+        <code #codeElement class="hljs language-javascript" contenteditable="true">{{mockedText}}
+        </code>
       </div>
-      <div>
-        <pre>
-          <code #myElement class="rounded hljs javascript" name="" id="" rows="10" contenteditable="true">
-            {{ pressionado ? mockedText : "" }}
-          </code>
-        </pre>
-      </div>
-      <div>
-        <button (click)="triggerTest(myElement)">me clicka</button>
-      </div>
+
     </div>
 </div>
+
+<div class="highlight-button-container col-12 d-flex flex-row justify-content-center align-items-center">
+  <button class="btn btn-block col-12">
+    <span class="secondary-text-opacity" (click)="visualizarComHighlight(codeElement)">Visualizar com o Highlight</span>
+  </button>
+</div>
+
+<!-- <div>
+  <button (click)="ligaHL(codeElement)">me clicka</button>
+</div> -->

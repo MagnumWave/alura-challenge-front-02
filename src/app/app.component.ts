@@ -30,6 +30,7 @@ export class AppComponent implements OnInit {
       id: null,
       nome: "SHOCKSTER",
       corDeFundo: "golden",
+      codigo:"blabs",
       descricao: "mexendo na shocka",
       estiloDoHighlight: "alucard",
       linguagem: "assembly",

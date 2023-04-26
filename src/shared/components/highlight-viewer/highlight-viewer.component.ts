@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import hljs from 'highlight.js';
-import javascript from 'highlight.js/lib/languages/javascript';
 
 @Component({
   selector: 'app-highlight-viewer',
@@ -10,6 +9,9 @@ import javascript from 'highlight.js/lib/languages/javascript';
 export class HighlightViewerComponent implements OnInit {
 
   @Input('color') color = '#000';
+
+  @ViewChild('codeElement')
+  newCodeElement!: HTMLElement;
 
   mockedText = `const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
 
@@ -22,17 +24,18 @@ export class HighlightViewerComponent implements OnInit {
     }
     return go(f, seed, [])
   }`
-  pressionado = false;
+  pressionado = true;
 
   constructor() {
-    hljs.registerLanguage('javascript', javascript);
+    // hljs.registerLanguage('javascript', javascript);
+
   }
 
   ngOnInit(): void {
   }
 
   triggerTest(arg: HTMLElement){
-    this.pressionado = true;
+    // this.pressionado = true;
     // document.addEventListener('DOMContentLoaded', (event) => {
     //   document.querySelectorAll('code').forEach((el:any) => {
     //     hljs.highlightElement(el);
@@ -47,6 +50,40 @@ export class HighlightViewerComponent implements OnInit {
     } else {
       return ""
     }
+  }
+
+  ligaHL(codeElement:HTMLElement){
+    hljs.highlightElement(codeElement);
+  }
+
+  desligaHL(codeElement: HTMLElement){
+    this.updateTextMock(codeElement);
+    this.removeAllChildrenFromNode(codeElement);
+    this.updateNodeClasses(codeElement, 'language-javascript');
+    this.appendElementText(codeElement, this.mockedText);
+  }
+
+  updateTextMock(codeElement: HTMLElement){
+    this.mockedText = codeElement.textContent as string;
+  }
+
+  removeAllChildrenFromNode(codeElement:HTMLElement){
+    while (codeElement.hasChildNodes() && codeElement.firstChild)
+      codeElement.firstChild.remove();
+  }
+
+  updateNodeClasses(codeElement: HTMLElement, languageClass: string) {
+    codeElement.className = "";
+    codeElement.classList.add('hljs');
+    codeElement.classList.add(languageClass);
+  }
+
+  appendElementText(codeElement: HTMLElement, mockedText: string) {
+    codeElement.append(mockedText);
+  }
+
+  visualizarComHighlight(codeElement: HTMLElement){
+    this.ligaHL(codeElement)
   }
 
 }

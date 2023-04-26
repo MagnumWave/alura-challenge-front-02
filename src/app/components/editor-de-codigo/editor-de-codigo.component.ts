@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { HighlightViewerComponent } from './../../../shared/components/highlight-viewer/highlight-viewer.component';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import hljs from 'highlight.js';
 import { ProjetosService } from 'src/app/services/projetos.service';
 
@@ -25,23 +26,27 @@ export class EditorDeCodigoComponent implements OnInit {
     this.pickedColor = input.value;
   }
 
-  visualizarComHighlight(){
+  visualizarComHighlight(arg: HighlightViewerComponent){
+    // console.log(arg);
+
     // document.addEventListener('DOMContentLoaded', (event) => {
     //   document.querySelectorAll('code').forEach((el:any) => {
     //     hljs.highlightElement(el);
     //   });
     // });
-    this.projServ.adicionaProjetoNaLista({
-      id: 4,
-      nome: "mister pangaré",
-      descricao: "teste de mock",
-      corDeFundo: "",
-      estiloDoHighlight: "",
-      linguagem: "C sharp",
-      numeroDeComentarios: 7,
-      numeroDeLikes: 10,
-      usuario: "zezito piroth"
-    });
+
+    // this.projServ.adicionaProjetoNaLista({
+    //   id: 4,
+    //   nome: "mister pangaré",
+    //   descricao: "teste de mock",
+    //   corDeFundo: "",
+    //   codigo: "function() {hello world}",
+    //   estiloDoHighlight: "",
+    //   linguagem: "C sharp",
+    //   numeroDeComentarios: 7,
+    //   numeroDeLikes: 10,
+    //   usuario: "zezito piroth"
+    // });
   }
 
 }

@@ -1,5 +1,6 @@
 export interface Projeto {
   id: number | null;
+  codigo: string;
   nome: string;
   descricao: string;
   linguagem: string;
