@@ -1,5 +1,5 @@
 export interface Projeto {
-  id: number | null;
+  id: number;
   codigo: string;
   nome: string;
   descricao: string;

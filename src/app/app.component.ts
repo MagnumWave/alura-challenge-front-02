@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
     // console.log(aux2);
 
     let mockProjeto: Projeto = {
-      id: null,
+      id: 30,
       nome: "SHOCKSTER",
       corDeFundo: "golden",
       codigo:"blabs",

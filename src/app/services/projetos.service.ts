@@ -6,28 +6,14 @@ import { Projeto, Projetos } from '../components/comunidade/projeto';
 })
 export class ProjetosService {
 
-  // private auxLista: Projeto[] = [
-  //   {
-  //     id: 1,
-  //     nome: "bobby",
-  //     descricao: "cachorro marrom",
-  //     linguagem: "javascript",
-  //     corDeFundo: "",
-  //     estiloDoHighlight: "",
-  //     numeroDeComentarios: 2,
-  //     numeroDeLikes: 3,
-  //     usuario: "zezito de la rua"
-  //   }
-  // ];
-
   public listaDeProjetos: Projetos = [
     {
       id: 1,
       nome: "bobby",
       descricao: "cachorro marrom",
       linguagem: "javascript",
-      corDeFundo: "azul",
-      codigo: "function() {hello world}",
+      corDeFundo: "#0F0",
+      codigo: "function() {hello bobby}",
       estiloDoHighlight: "dracula",
       numeroDeComentarios: 2,
       numeroDeLikes: 3,
@@ -38,8 +24,8 @@ export class ProjetosService {
       nome: "shocka",
       descricao: "cachorra amarela",
       linguagem: "python",
-      corDeFundo: "azul",
-      codigo: "function() {hello world}",
+      corDeFundo: "#00F",
+      codigo: "function() {hello shocka}",
       estiloDoHighlight: "dracula",
       numeroDeComentarios: 2,
       numeroDeLikes: 3,
@@ -50,8 +36,8 @@ export class ProjetosService {
       nome: "aurelio",
       descricao: "humano insano",
       linguagem: "cobol",
-      corDeFundo: "azul",
-      codigo: "function() {hello world}",
+      corDeFundo: "#F00",
+      codigo: "function() {hello aurelio}",
       estiloDoHighlight: "dracula",
       numeroDeComentarios: 2,
       numeroDeLikes: 3,

@@ -5,8 +5,8 @@ import { ComunidadeComponent } from './components/comunidade/comunidade.componen
 import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontrado.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/editor', pathMatch: 'full' },
-  { path: 'editor', component: EditorDeCodigoComponent },
+  { path: '', redirectTo: '/editor/0', pathMatch: 'full' },
+  { path: 'editor/:id', component: EditorDeCodigoComponent },
   { path: 'comunidade', component: ComunidadeComponent },
   { path: '**', component: NaoEncontradoComponent },
 ];

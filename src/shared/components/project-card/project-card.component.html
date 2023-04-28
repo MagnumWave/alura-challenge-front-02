@@ -1,1 +1,27 @@
-<p>project-card works!</p>
+<div class="card-wrapper">
+  <div class="highlight-wrapper">
+    <app-highlight-viewer [projetoID]="projetoID" [color]="innerProjeto?.corDeFundo"></app-highlight-viewer>
+  </div>
+  <div class="card-footer-wrapper">
+    <div class="row">
+      <div class="col-12">
+        {{innerProjeto?.nome}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        {{innerProjeto?.descricao}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        Likes: {{innerProjeto?.numeroDeLikes}} e Comments: {{innerProjeto?.numeroDeComentarios}}
+      </div>
+      <div class="col-6">
+        <app-user-profile></app-user-profile>
+      </div>
+    </div>
+  </div>
+</div>

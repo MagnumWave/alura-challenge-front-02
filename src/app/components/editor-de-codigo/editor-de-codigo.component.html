@@ -3,61 +3,62 @@
 
     <div class="highlight-col col-12 col-lg-8 d-flex flex-column justify-content-start align-items-center my-3">
       <div class="hightligh-code-area-container container-fluid col-12 d-flex flex-column justify-content-center align-items-center p-0 m-0 mb-3 rounded">
-        <app-highlight-viewer #hlViewer class="w-h-100 rounded" [color]="pickedColor"></app-highlight-viewer>
+        <app-highlight-viewer #hlViewer class="w-h-100 rounded" [modoEdicao]="true" [color]="pickedColor" (codigo)="handleCodigoUpdate($event)"></app-highlight-viewer>
       </div>
 
 
-      <!-- <div class="highlight-button-container col-12 d-flex flex-row justify-content-center align-items-center">
-        <button class="btn btn-block col-12">
-          <span class="secondary-text-opacity" (click)="visualizarComHighlight(hlViewer)">Visualizar com o Highlight</span>
-        </button>
-      </div> -->
+
     </div>
 
-    <div class="project-col col-12 col-lg-4 my-3 py-3">
-
-      <div class="section-container col-12">
-        <div class="section-title">SEU PROJETO</div>
-        <input #realColorPicker class="visually-hidden" type="color" name="" id=""
-              (change)="handleChangeColorPicker(realColorPicker)">
-        <div class="form-item-container col-12">
-          <input
-            class="col-12 rounded border-0 font-weight-normal form-item-padding my-2"
-            type="text" placeholder="Nome do seu projeto">
-        </div>
-        <div class="form-item-container col-12">
-          <textarea
-            class="col-12 rounded border-0 font-weight-normal form-item-padding my-2"
-            placeholder="Descrição do seu projeto"></textarea>
-        </div>
-      </div>
-
-      <div class="section-container">
-        <div class="section-title">PERSONALIZAÇÃO</div>
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-12">
-            <div class="form-item-container w-100">
-              <select
-                class="w-100 rounded border-0 font-weight-normal form-item-padding my-2"
-                name="" id="">
-                <option value="">JavaScript</option>
-                <option value="">Python</option>
-              </select>
-            </div>
+    <div class="project-col col-12 col-lg-4 my-3 pt-0 pb-3">
+      <form [formGroup]="myForm">
+        <div class="section-container col-12">
+          <div class="section-title">SEU PROJETO</div>
+          <input #realColorPicker class="visually-hidden" type="color" name="" id=""
+                (change)="handleChangeColorPicker(realColorPicker)" formControlName="corDeFundo">
+          <div class="form-item-container col-12">
+            <input
+              class="col-12 rounded border-0 font-weight-normal form-item-padding my-2"
+              type="text" placeholder="Nome do seu projeto" formControlName="nome">
           </div>
+          <div class="form-item-container col-12">
+            <textarea
+              class="col-12 rounded border-0 font-weight-normal form-item-padding my-2"
+              placeholder="Descrição do seu projeto" formControlName="descricao"></textarea>
+          </div>
+        </div>
 
-          <div class="col-12 col-md-6 col-lg-12">
-            <div class="color-picker-container form-item-container rounded border-0 w-100 my-2">
-              <div class="d-flex flex-row justify-content-center">
-                <div [style]="{'background-color': pickedColor }" class="fake-color-picker rounded" (click)="abreColorPicker(realColorPicker)"></div>
+        <div class="section-container">
+          <div class="section-title">PERSONALIZAÇÃO</div>
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-12">
+              <div class="form-item-container w-100">
+                <select
+                  class="w-100 rounded border-0 font-weight-normal form-item-padding my-2"
+                  name="" id="" formControlName="linguagem">
+                  <option ngValue="language-javascript" [selected]="true">JavaScript</option>
+                  <option ngValue="language-html">HTML</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-12">
+              <div class="color-picker-container form-item-container rounded border-0 w-100 my-2">
+                <div class="d-flex flex-row justify-content-center">
+                  <div [style]="{'background-color': pickedColor }" class="fake-color-picker rounded" (click)="abreColorPicker(realColorPicker)"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </form>
 
       <div class="save-button-container col-12">
         <button class="col-12 btn">Salvar projeto</button>
+      </div>
+
+      <div class="save-button-container col-12">
+        <button class="col-12 btn" (click)="logaPraMim()">loga pra mim</button>
       </div>
 
     </div>

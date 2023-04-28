@@ -8,6 +8,7 @@ import { EditorDeCodigoComponent } from './components/editor-de-codigo/editor-de
 import { ComunidadeComponent } from './components/comunidade/comunidade.component';
 import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontrado.component';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   providers: [ProjetosService],
   bootstrap: [AppComponent]
