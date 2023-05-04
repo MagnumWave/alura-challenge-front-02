@@ -1,48 +1,13 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { ProjetosService } from './services/projetos.service';
-import { Projeto } from './components/comunidade/projeto';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  constructor(private projService: ProjetosService){
+  constructor(){
   }
-  ngOnInit(): void {
-    console.log(this.projService.getLista());
-
-  }
-
-
-
-  logaPraMim(){
-
-    // let aux = this.projService.getLista();
-    // console.log(aux);
-
-    // let aux2 = this.projService.getProjetoById(2);
-    // console.log(aux2);
-
-    let mockProjeto: Projeto = {
-      id: 30,
-      nome: "SHOCKSTER",
-      corDeFundo: "golden",
-      codigo:"blabs",
-      descricao: "mexendo na shocka",
-      estiloDoHighlight: "alucard",
-      linguagem: "assembly",
-      numeroDeComentarios: 25,
-      numeroDeLikes: 39,
-      usuario: "The Silva"
-    }
-
-    let aux3 = this.projService.editaProjeto(2, mockProjeto);
-    console.log(aux3);
-
-  }
-
 
 }

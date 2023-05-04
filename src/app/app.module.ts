@@ -9,6 +9,7 @@ import { ComunidadeComponent } from './components/comunidade/comunidade.componen
 import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontrado.component';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [ProjetosService],
   bootstrap: [AppComponent]

@@ -1,26 +1,31 @@
-<div class="card-wrapper">
+<div class="card-wrapper" (click)="cardClick(projetoID)">
   <div class="highlight-wrapper">
     <app-highlight-viewer [projetoID]="projetoID" [color]="innerProjeto?.corDeFundo"></app-highlight-viewer>
   </div>
-  <div class="card-footer-wrapper">
-    <div class="row">
-      <div class="col-12">
+  <div class="card-footer-wrapper p-4">
+    <div class="row mb-2">
+      <div class="col-12 project-title">
         {{innerProjeto?.nome}}
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-12">
+    <div class="row my-2">
+      <div class="col-12 project-description">
         {{innerProjeto?.descricao}}
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-6">
-        Likes: {{innerProjeto?.numeroDeLikes}} e Comments: {{innerProjeto?.numeroDeComentarios}}
+    <div class="row mt-4">
+      <div class="col-6 likes-and-comments">
+        <span class="me-3">
+          <i class="fa fa-comment"></i> {{innerProjeto?.numeroDeComentarios}}
+        </span>
+        <span>
+          <i class="fa fa-heart"></i> {{innerProjeto?.numeroDeLikes}}
+        </span>
       </div>
-      <div class="col-6">
-        <app-user-profile></app-user-profile>
+      <div class="col-6 user-profile-wrapper d-flex flex-row justify-content-end">
+        <app-user-profile [isUserTagOnly]="true"></app-user-profile>
       </div>
     </div>
   </div>

@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import hljs from 'highlight.js';
 import { Projeto } from 'src/app/components/comunidade/projeto';
 import { ProjetosService } from 'src/app/services/projetos.service';
@@ -11,63 +10,25 @@ import { ProjetosService } from 'src/app/services/projetos.service';
 })
 export class HighlightViewerComponent implements OnInit {
 
-  @Input('color') color: string | undefined = '#000';
+  @Input('color') color: string | null | undefined = '#000';
   @Input('modoEdicao') modoEdicao = false;
   @Output('codigo') codigo: EventEmitter<any> = new EventEmitter();
   @Input('projetoID') projetoID: number = 0;
-
-  @ViewChild('codeElement')
-  newCodeElement!: HTMLElement;
+  @Input('linguagemEscolhida') linguagemEscolhida: string | null | undefined = 'language-abnf';
 
   innerProjeto: Projeto | undefined;
 
-  podeEditar = false;
-
   mockedText: string | undefined;
-  pressionado = true;
 
-  constructor(private route: ActivatedRoute,
-              private projServ: ProjetosService) {
-    // hljs.registerLanguage('javascript', javascript);
-
-  }
+  constructor(private projServ: ProjetosService) {}
 
   ngOnInit(): void {
-    // if (this.projetoID){
-    //   this.mockedText = this.innerProjeto?.codigo;
-    // }
-
     if (this.projetoID != 0){
       this.innerProjeto = this.projServ.getProjetoById(this.projetoID)
       this.mockedText = this.innerProjeto?.codigo;
-      console.log(this.innerProjeto);
-
     } else {
-      this.mockedText = 'digite seu código, por obséquio...';
-    }
-    // this.codigo.emit(this.mockedText)
-    // console.log(this.route.snapshot.params['id']);
-    //vai afetar o comportamento do botão salvar
-    // quando for igual a 0, adiciona
-    // quando for diferente de 0, edita
-
-  }
-
-  triggerTest(arg: HTMLElement){
-    // this.pressionado = true;
-    // document.addEventListener('DOMContentLoaded', (event) => {
-    //   document.querySelectorAll('code').forEach((el:any) => {
-    //     hljs.highlightElement(el);
-    //   });
-    // });
-    hljs.highlightElement(arg)
-  }
-
-  mostraMock(){
-    if (this.pressionado){
-      return this.mockedText
-    } else {
-      return ""
+      this.mockedText = 'Digite aqui seu código.';
+      this.codigo.emit(this.mockedText);
     }
   }
 
@@ -78,42 +39,33 @@ export class HighlightViewerComponent implements OnInit {
   desligaHL(codeElement: HTMLElement){
     this.updateTextMock(codeElement);
     this.removeAllChildrenFromNode(codeElement);
-    this.updateNodeClasses(codeElement, 'language-javascript');
-    if(this.mockedText){
-      this.appendElementText(codeElement, this.mockedText);
-    }
-
+    this.updateNodeClasses(codeElement, this.linguagemEscolhida as string);
+    this.appendElementText(codeElement, this.mockedText as string);
   }
 
-  updateTextMock(codeElement: HTMLElement){
+  private updateTextMock(codeElement: HTMLElement){
     this.mockedText = codeElement.textContent as string;
   }
 
-  removeAllChildrenFromNode(codeElement:HTMLElement){
+  private removeAllChildrenFromNode(codeElement:HTMLElement){
     while (codeElement.hasChildNodes() && codeElement.firstChild)
       codeElement.firstChild.remove();
   }
 
-  updateNodeClasses(codeElement: HTMLElement, languageClass: string) {
+  private updateNodeClasses(codeElement: HTMLElement, languageClass: string) {
     codeElement.className = "";
     codeElement.classList.add('hljs');
     codeElement.classList.add(languageClass);
   }
 
-  appendElementText(codeElement: HTMLElement, mockedText: string) {
+  private appendElementText(codeElement: HTMLElement, mockedText: string) {
     codeElement.append(mockedText);
   }
 
-  visualizarComHighlight(codeElement: HTMLElement){
-    this.ligaHL(codeElement)
-  }
-
   handleCodeBlur(codeElement: HTMLElement){
-    if(codeElement.textContent)
-      this.mockedText = codeElement.textContent;
+    this.mockedText = codeElement.textContent as string;
 
-    this.codigo.emit(this.mockedText)
-
+    this.codigo.emit(this.mockedText);
   }
 
   handleCodeClick(codeElement: HTMLElement){
@@ -121,6 +73,18 @@ export class HighlightViewerComponent implements OnInit {
       this.desligaHL(codeElement);
       codeElement.setAttribute('contenteditable','true');
       codeElement.focus();
+    }
+  }
+
+  changeLanguage(newLanguage: string){
+    this.linguagemEscolhida = newLanguage;
+  }
+
+  get estiloHighlight(){
+    if(!this.innerProjeto || !this.innerProjeto.estiloDoHighlight){
+      return "dracula"
+    } else {
+      return this.innerProjeto.estiloDoHighlight;
     }
   }
 

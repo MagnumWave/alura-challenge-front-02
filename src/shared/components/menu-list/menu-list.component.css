@@ -9,20 +9,36 @@
   }
 }
 
+@media (min-width: 321px) and (max-width: 768px)  {
+  .hori-rule {
+    width: 200px;
+  }
+}
+
 .list-container>ul {
   list-style: none;
+}
+
+.list-container li:not(.active-route) {
+  opacity: 0.5;
+  transition: all linear 0.3s;
+  cursor: pointer;
+}
+
+.list-container ul li:hover {
+  opacity: 1;
+  transition: all linear 0.3s;
+}
+
+.active-route {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .hori-rule {
   width: 170px;
   height: 1px;
   opacity: 0.2;
-}
-
-@media (min-width: 321px) and (max-width: 768px)  {
-  .hori-rule {
-    width: 200px;
-  }
 }
 
 .option-description {

@@ -1,4 +1,4 @@
-.w-h-100 {
+.highlight-col > div > app-highlight-viewer {
   width: 100%;
   height: 100%;
 }
@@ -30,6 +30,7 @@
 
 .form-item-container>input[type=text] {
   background-color: var(--input-bg-color);
+  color: rgba(255, 255, 255, 0.64);
 
   font-family: var(--inter-font-family-mobile);
   font-style: normal;
@@ -44,8 +45,10 @@
 
 .form-item-container>textarea {
   background-color: var(--input-bg-color);
+  color: rgba(255, 255, 255, 0.64);
   font-style: normal;
   line-height: 24px;
+
 }
 
 .form-item-container>textarea::placeholder {
@@ -58,6 +61,11 @@
   color: var(--input-placeholder-color);
   font-style: normal;
   line-height: 24px;
+}
+
+.form-item-container>select option {
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
 }
 
 .color-picker-container {
@@ -88,8 +96,4 @@
   color: var(--secondary-button-text-color);
   font-family: var(--inter-font-family-mobile);
   font-size: var(--second-font-size-mobile);
-}
-
-.secondary-text-opacity {
-  opacity: 0.8;
 }

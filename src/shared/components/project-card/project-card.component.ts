@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { Projeto, Projetos } from 'src/app/components/comunidade/projeto';
 import { ProjetosService } from 'src/app/services/projetos.service';
 
@@ -10,22 +10,22 @@ import { ProjetosService } from 'src/app/services/projetos.service';
 })
 export class ProjectCardComponent implements OnInit {
 
+
   @Input('projetoID') projetoID: number = 0;
 
   // listaDeProjetos: Projetos;
   innerProjeto: Projeto | undefined;
 
-  constructor(private projServ: ProjetosService) {
-
-   }
+  constructor(private projServ: ProjetosService,
+              private router: Router) {}
 
   ngOnInit(): void {
-    if (this.projetoID != 0){
+    if (this.projetoID != 0)
       this.innerProjeto = this.projServ.getProjetoById(this.projetoID);
+  }
 
-      console.log(this.innerProjeto);
-
-    }
+  cardClick(id: number) {
+    this.router.navigateByUrl(`/editor/${id}`);
   }
 
 }

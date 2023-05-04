@@ -1,10 +1,10 @@
 import { HighlightViewerComponent } from './../../../shared/components/highlight-viewer/highlight-viewer.component';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import hljs from 'highlight.js';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProjetosService } from 'src/app/services/projetos.service';
-import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 import { Projeto } from '../comunidade/projeto';
+import { listaDeLinguagens } from './listaDeLinguagens';
 
 @Component({
   selector: 'app-editor-de-codigo',
@@ -13,10 +13,10 @@ import { Projeto } from '../comunidade/projeto';
 })
 export class EditorDeCodigoComponent implements OnInit {
 
-  @ViewChild('realColorPicker') realColorPicker: HTMLInputElement | undefined;
-  @ViewChild('hlViewer') hlViewer!: HighlightViewerComponent | undefined;
+  listaDeLinguagens = listaDeLinguagens;
 
-  pickedColor = "#6BD1FF";
+  @ViewChild('hlViewer') hlViewer!: HighlightViewerComponent | undefined;
+  pickedColor: string | null | undefined = "#6BD1FF";
 
   myForm = this.fb.group({
     nome: '',
@@ -26,26 +26,19 @@ export class EditorDeCodigoComponent implements OnInit {
     codigo: this.hlViewer?.mockedText
   })
 
+  public innerID: number = 0;
+
   constructor(private projServ: ProjetosService,
+              private router: Router,
               private actRoute: ActivatedRoute,
-              private fb: FormBuilder) {}
+              private fb: FormBuilder) {
+                this.innerID = Number.parseInt(this.actRoute.snapshot.params['id']);
+              }
 
   ngOnInit(): void {
-    console.log(this.actRoute.snapshot.params['id']);
-    //vai afetar o comportamento do botão salvar
-    // quando for igual a 0, adiciona
-    // quando for diferente de 0, edita
-    let intID = Number.parseInt(this.actRoute.snapshot.params['id']);
-    if(intID){
-      console.log('edita');
-      //edita
-      let projetobyId = this.projServ.getProjetoById(intID);
-      console.log(projetobyId);
-
-    } else {
-      console.log('adiciona');
-      //adiciona
-
+    if (this.innerProjeto){
+      this.myForm.patchValue(this.innerProjeto);
+      this.pickedColor = this.innerProjeto.corDeFundo;
     }
   }
 
@@ -57,13 +50,33 @@ export class EditorDeCodigoComponent implements OnInit {
     this.pickedColor = input.value;
   }
 
-  logaPraMim(){
-    console.log(this.myForm.value);
-    // console.log(this.hlViewer?.mockedText);
-  }
-
   handleCodigoUpdate(codigo: string){
     this.myForm.get('codigo')?.setValue(codigo);
   }
 
+  salvaProjeto() {
+    let proyecto = {
+      id: this.innerID ? this.innerID : null,
+      nome: this.myForm.value.nome,
+      descricao: this.myForm.value.descricao,
+      linguagem: this.myForm.value.linguagem,
+      corDeFundo: this.myForm.value.corDeFundo,
+      codigo: this.myForm.value.codigo
+    } as Projeto;
+
+    this.projServ.handleSalvarProjeto(proyecto);
+    this.router.navigateByUrl('/comunidade');
+  }
+
+  get innerProjeto(){
+    return this.projServ.getProjetoById(this.innerID);
+  }
+
+  get linguagemEscolhida(){
+    return this.innerProjeto && this.innerProjeto.linguagem ? this.innerProjeto.linguagem : "language-javascript";
+  }
+
+  escolheLinguagem(){
+    this.hlViewer?.changeLanguage(this.myForm.get('linguagem')?.value as string);
+  }
 }

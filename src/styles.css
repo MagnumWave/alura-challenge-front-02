@@ -7,6 +7,14 @@
   --inter-font-family-mobile: 'Inter', sans-serif;
   --roboto-font-family-mobile: 'Roboto Mono', sans-serif;
 
+  --mobile-project-title-font-size: 21px;
+  --mobile-project-title-font-weight: 700;
+  --mobile-project-description-font-size: 16px;
+  --mobile-project-description-font-weight: 400;
+  --mobile-project-likes-comments-font-size: 16px;
+  --mobile-project-likes-comments-font-weight: 400;
+  --project-card-background-alpha-color: rgba(0, 0, 0, 0.16);
+
   --input-bg-color: rgba(255, 255, 255, 0.16);
   --input-placeholder-color: rgb(255, 255, 255, 0.64);
 
@@ -15,45 +23,13 @@
 
   --menu-mobile-tablet-background: #2D415B;
 
-  --red-of-three-dots-color: #FF5F56;
-  --yellow-of-three-dots-color: #FFBD2E;
-  --green-of-three-dots-color: #27C93F;
-
   --primary-button-bg-color: #5081FB;
   --primary-button-text-color: #051D3B;
-
   --secondary-button-bg-color: rgba(80, 129, 251, 0.08);
   --secondary-button-text-color: #fff;
-
-
-
 }
 
 body {
   background-color: var(--main-bg-color) !important;
   font-size: var(--first-font-size-mobile);
-}
-
-.black-border {
-  border: 1px solid black;
-}
-
-.red-border {
-  border: 1px solid red;
-}
-
-.green-border {
-  border: 1px solid green;
-}
-
-.blue-border {
-  border: 1px solid blue;
-}
-
-.yellow-border {
-  border: 1px solid yellow;
-}
-
-.fuchsia-border {
-  border: 1px solid fuchsia;
 }

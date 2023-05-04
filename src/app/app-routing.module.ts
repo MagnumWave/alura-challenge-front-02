@@ -4,7 +4,7 @@ import { EditorDeCodigoComponent } from './components/editor-de-codigo/editor-de
 import { ComunidadeComponent } from './components/comunidade/comunidade.component';
 import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontrado.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', redirectTo: '/editor/0', pathMatch: 'full' },
   { path: 'editor/:id', component: EditorDeCodigoComponent },
   { path: 'comunidade', component: ComunidadeComponent },

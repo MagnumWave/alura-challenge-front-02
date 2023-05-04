@@ -6,6 +6,12 @@
   }
 }
 
+
+.tag-only-fix{
+  width: 30px !important;
+}
+
+
 .photo-wrapper {
   width: 40px;
   resize: both;
@@ -21,4 +27,6 @@
   font-weight: 400;
   font-size: var(--second-font-size-mobile);
   line-height: 24px;
+
+  opacity: 0.8;
 }

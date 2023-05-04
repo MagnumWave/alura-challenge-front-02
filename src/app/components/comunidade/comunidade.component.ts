@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProjetosService } from 'src/app/services/projetos.service';
 import { Projetos } from './projeto';
 
@@ -7,17 +7,12 @@ import { Projetos } from './projeto';
   templateUrl: './comunidade.component.html',
   styleUrls: ['./comunidade.component.css']
 })
-export class ComunidadeComponent implements OnInit {
+export class ComunidadeComponent {
 
   listaDeProjetos: Projetos;
 
   constructor(private projServ: ProjetosService) {
-    this.listaDeProjetos = projServ.getLista();
+    this.listaDeProjetos = this.projServ.getLista();
    }
-
-  ngOnInit(): void {
-    console.log(this.listaDeProjetos);
-
-  }
 
 }

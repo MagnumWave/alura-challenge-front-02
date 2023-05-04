@@ -1,10 +1,10 @@
 <div class="profile-wrapper">
   <div class="profile-frame d-flex flex-row justify-content-start align-items-center">
-    <div class="photo-wrapper">
+    <div class="photo-wrapper" [ngClass]="{'tag-only-fix': isUserTagOnly}">
       <img src="assets\images\harry-photo.jpg" class="rounded-circle img-fluid" alt="...">
     </div>
     <div class="ms-2 text-white user-name">
-      Harry
+      <span *ngIf="isUserTagOnly">@</span>Harry
     </div>
   </div>
 </div>

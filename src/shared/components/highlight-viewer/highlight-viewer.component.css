@@ -1,46 +1,7 @@
-.code-textarea {
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-
-  font-family: var(--roboto-font-family-mobile);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-}
-
 .inner-container {
   padding: 20px !important;
   padding-bottom: 16px !important;
 }
-
-/* .three-dot-header {
-  position: relative;
-  top: 10px;
-  right: 40%;
-  margin-left: 30px;
-  margin-bottom: -15px;
-}
-
-.three-dot-header>span {
-  width: 10px;
-  height: 10px;
-  margin: 3px;
-  border-radius: 5px;
-}
-
-.three-dot-header>span:nth-child(1) {
-  background-color: var(--red-of-three-dots-color);
-}
-
-.three-dot-header>span:nth-child(2) {
-  background-color: var(--yellow-of-three-dots-color);
-}
-
-.three-dot-header>span:nth-child(3) {
-  background-color: var(--green-of-three-dots-color);
-} */
 
 .code-wrapper {
   white-space: pre-wrap;
@@ -57,6 +18,11 @@
 
 .mw-min-height {
   min-height: 200px
+}
+
+.modo-visualizacao-fix {
+  max-height: 200px;
+  overflow-y: clip;
 }
 
 .highlight-button-container>button {
